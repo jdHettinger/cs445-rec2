@@ -32,7 +32,6 @@ public class LongestCommonSubsequence {
         //Put the first string into the bag
 
         possibleSubsequences = new ArrayBag();
-
         possibleSubsequences.add(first);
 
         //Create variable longest (for the longest subsequence so far)
