@@ -16,6 +16,8 @@ public class LongestCommonSubsequence {
         // TODO: Create reference a variable named possibleSubsequences for storing the bag
         // and assign it a value of null
 
+        ArrayBag possibleSubsequences = null;
+
         if (args.length != 2) {
             System.out.println("Type two strings as command-line arguments. Use --args \"first second\" if using gradle.");
             return;
@@ -26,11 +28,45 @@ public class LongestCommonSubsequence {
 
         // TODO: Add code here to create the bag and add the initial string
 
+        /*
+        
+       
+        While the bag is not empty:
+            Remove a string from the bag, call it test
+            If longest is shorter than test:
+                If test is a subsequence of second:
+                    Set longest to test
+                Otherwise, if test is at least 2 characters longer than longest:
+                    Generate new strings from test by removing a different single
+                    character each time.
+                    Add each of the newly-generated strings to the bag.
+            Print the bag of strings that still need to be checked, for debugging
+        Print out the longest subsequence
+        */
+        //Create an empty bag
+        //Put the first string into the bag
+        
+        possibleSubsequences = new ArrayBag();
+
+        possibleSubsequences.add(first);
+
+        //Create variable longest (for the longest subsequence so far)
+        //Initialize longest to empty string
+
         System.out.println("The string bag contains: " + possibleSubsequences);
         String longest = new String("");
 
         // TODO: Add code here to implement the longest common subsequence
         // algorithm
+
+        while(!possibleSubsequences.isEmpty()){
+            String test = (String) possibleSubsequences.remove();
+            if (longest < test.length()) {
+
+            }
+            System.out.println(test);
+            break;
+        }
 
         System.out.println("Longest common subsequence:");
         System.out.println(longest);
