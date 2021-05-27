@@ -62,13 +62,17 @@ public class LongestCommonSubsequence {
             String test = (String) possibleSubsequences.remove();
             if (longest.length() < test.length()) {
                 if (test.isSubsequence(test, second)) {
-                    
+                    longest = test;
+                } else if(test.length() >= (longest.length() + 2)){
+                    char[] charArray = test.toCharArray();
+                    for(int i = 0; i < charArray.length; i++){
+                        String characters = charArray[i];
+                        possibleSubsequences.add(characters);
+                    }
                 }
             }
-            System.out.println(test);
-            break;
+            possibleSubsequences.toString();
         }
-
         System.out.println("Longest common subsequence:");
         System.out.println(longest);
 
