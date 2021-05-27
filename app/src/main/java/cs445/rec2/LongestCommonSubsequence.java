@@ -28,24 +28,9 @@ public class LongestCommonSubsequence {
 
         // TODO: Add code here to create the bag and add the initial string
 
-        /*
-        
-       
-        While the bag is not empty:
-            Remove a string from the bag, call it test
-            If longest is shorter than test:
-                If test is a subsequence of second:
-                    Set longest to test
-                Otherwise, if test is at least 2 characters longer than longest:
-                    Generate new strings from test by removing a different single
-                    character each time.
-                    Add each of the newly-generated strings to the bag.
-            Print the bag of strings that still need to be checked, for debugging
-        Print out the longest subsequence
-        */
         //Create an empty bag
         //Put the first string into the bag
-        
+
         possibleSubsequences = new ArrayBag();
 
         possibleSubsequences.add(first);
@@ -59,10 +44,26 @@ public class LongestCommonSubsequence {
         // TODO: Add code here to implement the longest common subsequence
         // algorithm
 
+        /*
+        While the bag is not empty:
+            Remove a string from the bag, call it test
+            If longest is shorter than test:
+                If test is a subsequence of second:
+                    Set longest to test
+                Otherwise, if test is at least 2 characters longer than longest:
+                    Generate new strings from test by removing a different single
+                    character each time.
+                    Add each of the newly-generated strings to the bag.
+            Print the bag of strings that still need to be checked, for debugging
+        Print out the longest subsequence
+        */
+        
         while(!possibleSubsequences.isEmpty()){
             String test = (String) possibleSubsequences.remove();
-            if (longest < test.length()) {
-
+            if (longest.length() < test.length()) {
+                if (test.isSubsequence(test, second)) {
+                    
+                }
             }
             System.out.println(test);
             break;
